@@ -1,15 +1,24 @@
 service: "Xray.ml.model.model_service:svc"
+
 labels:
-    owner: Ahmed_Moataz
-    stage: dev
+  owner: Ahmed_Moataz
+  stage: dev
+
 include:
-    - "Xray/ml/model/model_service.py"
-    - "Xray/constant/training_pipeline/__init__.py"
+  - "Xray/ml/model/model_service.py"
+  - "Xray/constant/training_pipeline/__init__.py"
+
+python_version: "3.10"
+
 python:
-    packages:
-        - torch
-        - torchvision
-        - Pillow
-        - numpy
-    extra_index_url:
-        - "https://download.pytorch.org/whl/cpu"
+  packages:
+    - torch==2.5.0
+    - torchvision==0.20.0
+    - Pillow
+    - numpy
+    - pandas
+    - mlflow
+    - joblib
+
+  extra_index_url:
+    - "https://download.pytorch.org/w
